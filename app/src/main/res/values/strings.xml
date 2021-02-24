@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Resoffice2</string>
+    <string name="get_location">1. Get Location</string>
+    <string name="get_region">2. Get Region</string>
+    <string name="get_offices">3. Get Offices</string>
+    <string name="determine_your_location">Determine your location</string>
+    <string name="determine_your_region">Determine your region</string>
+    <string name="determine_your_offices">Determine your offices</string>
+    <string name="get_coordinate">Get Coordinate</string>
+</resources>

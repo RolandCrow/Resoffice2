@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Resoffice2</string>
+    <string name="get_location" translatable="false">Узнать местоположени</string>
+    <string name="get_region">Ваш регион</string>
+    <string name="get_offices">Офисы рядом</string>
+    <string name="determine_your_location">Узнайте свое местоположение</string>
+    <string name="determine_your_region">Регион местонахождения</string>
+    <string name="determine_your_offices">Получите список офисов</string>
+    <string name="get_coordinate">Узнать координаты</string>
+</resources>

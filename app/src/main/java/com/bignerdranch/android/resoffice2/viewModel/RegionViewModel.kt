@@ -12,19 +12,10 @@ class RegionViewModel(private val repository: Repository): ViewModel() {
 
     val myResponse2: MutableLiveData<Response<List<Region>>> = MutableLiveData() // все тоже самое, что и в OfficeViewModel
 
-
-
     fun getRegion2(coordinate: String) {
         viewModelScope.launch {
             val response = repository.getRegion2(coordinate)
             myResponse2.value = response
         }
     }
-
-
-
-
-
-    }
-
-
+}

@@ -9,5 +9,4 @@ data class Office( // класс для получения переменных 
     val SADDRESS: String,
     @SerializedName("SGRAF")
     val SGRAF: String
-
 )

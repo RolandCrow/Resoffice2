@@ -1,21 +1,27 @@
 package com.bignerdranch.android.resoffice2.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bignerdranch.android.resoffice2.R
 import com.bignerdranch.android.resoffice2.api.Office
-import kotlinx.android.synthetic.main.list_offices.view.*
+import com.bignerdranch.android.resoffice2.databinding.ListOfficesBinding
 
 class MyOfficeAdapter: RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>()  { // все тоже самое, что и в MyRegionAdapter
 
     private var myOfficeList = emptyList<Office>()
 
-    inner class MyOfficeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
+    inner class MyOfficeViewHolder(private val binding: ListOfficesBinding): RecyclerView.ViewHolder(binding.root) {
+        fun bind(office: Office) {
+            binding.nameOffice.text = office.SSHORTNAME
+            binding.addressOffices.text = office.SADDRESS
+            binding.timeWorking.text = office.SGRAF
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyOfficeViewHolder {
-        return MyOfficeViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_offices, parent, false))
+        val inflater = LayoutInflater.from(parent.context)
+        val binding = ListOfficesBinding.inflate(inflater, parent, false)
+        return MyOfficeViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -23,15 +29,11 @@ class MyOfficeAdapter: RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>(
     }
 
     override fun onBindViewHolder(holder: MyOfficeViewHolder, position: Int) {
-        holder.itemView.nameOffice.text = myOfficeList[position].SSHORTNAME
-        holder.itemView.addressOffices.text = myOfficeList[position].SADDRESS
-        holder.itemView.time_working.text = myOfficeList[position].SGRAF
+        holder.bind(myOfficeList[position])
     }
 
     fun setData(newList: List<Office>) {
         myOfficeList = newList
         notifyDataSetChanged()
     }
-
-
 }

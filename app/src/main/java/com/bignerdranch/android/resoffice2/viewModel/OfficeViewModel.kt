@@ -19,5 +19,4 @@ class OfficeViewModel(private val repository: RepositoryOffice): ViewModel() {
             myResponseOfOffice.value = response
         }
     }
-
 }
